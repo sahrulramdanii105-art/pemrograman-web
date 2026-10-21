@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Form Data Mahasiswa</h2>
+
+    <form id="formMahasiswa" novalidate>
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Masukkan nama">
+        <div class="error" id="errorNama"></div>
+
+        <label for="nim">NIM</label>
+        <input type="text" id="nim" placeholder="Masukkan NIM">
+        <div class="error" id="errorNim"></div>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Masukkan email">
+        <div class="error" id="errorEmail"></div>
+
+        <label for="jurusan">Jurusan</label>
+        <select id="jurusan">
+            <option value="">Pilih Jurusan</option>
+            <option>Teknik Informatika</option>
+            <option>Teknologi Komputer</option>
+            <option>Sistem Informasi</option>
+        </select>
+        <div class="error" id="errorJurusan"></div>
+
+        <label>Jenis Kelamin</label>
+        <div class="pilihan">
+            <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+            <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+        </div>
+        <div class="error" id="errorGender"></div>
+
+        <label>Hobi (pilih minimal satu)</label>
+        <div class="pilihan">
+            <label><input type="checkbox" name="hobi" value="Membaca"> Membaca</label>
+            <label><input type="checkbox" name="hobi" value="Olahraga"> Olahraga</label>
+            <label><input type="checkbox" name="hobi" value="Bersepeda"> Bersepeda</label>
+        </div>
+        <div class="error" id="errorHobi"></div>
+
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" rows="3" placeholder="Masukkan alamat"></textarea>
+        <div class="error" id="errorAlamat"></div>
+
+        <button type="submit">Kirim</button>
+        <div id="berhasil"></div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
