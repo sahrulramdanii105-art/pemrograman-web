@@ -1,0 +1,102 @@
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(57, 20, 84);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #f5f7f9;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+}
+
+h2 {
+    color: #1565c0;
+    margin-top: 30px;
+}
+
+a {
+    color: white;
+    background-color: #1565c0;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #051327;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #1565c0;
+    border-radius: 5px;
+}
+
+li h3 {
+    color: #1565c0;
+}
+
+li p {
+    text-align: left;
+}
+
+
+
+.card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #1565C0;
+    box-shadow: 0 2px 5px #cccccc;
+}
+
+.card h3 {
+    color: #1565C0;
+}
+
+
+
+.card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #1565C0;
+    box-shadow: 0 2px 5px #cccccc;
+}
+
+.card h3 {
+    color: #1565C0;
+}
+
+table {
+    background-color: white;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #1565C0;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #D0DCE8;
+    text-align: left;
+}

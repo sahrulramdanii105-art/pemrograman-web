@@ -1,0 +1,145 @@
+
+/* Mengatur seluruh halaman */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+/* Navigasi */
+header {
+    background-color: #111;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+/* Animasi hover navigasi */
+.navbar a:hover {
+    color: #00ff00;
+    transform: scale(1.1);
+}
+
+/* Konten utama */
+main {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Artikel */
+.artikel {
+    background-color: #e5e5e5;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.artikel h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/* Kontak */
+.kontak {
+    background-color: #e5e5e5;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.kontak h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Tombol */
+button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: darkgreen;
+    transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Responsive untuk HP */
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    main {
+        margin: 20px auto;
+    }
+
+    .artikel, .kontak {
+        padding: 15px;
+    }
+}
