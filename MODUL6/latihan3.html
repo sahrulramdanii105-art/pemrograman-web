@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Praktikum - Validasi Form</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+            display: block;
+            margin-top: 2px;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Form Pendaftaran</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        
+        <div class="form-group">
+            <label for="nama">Nama (Wajib diisi):</label><br>
+            <input type="text" id="nama" onblur="validateNama()">
+            <span id="errorNama" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" onblur="validateEmail()">
+            <span id="errorEmail" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="umur">Umur (1 - 100):</label><br>
+            <input type="number" id="umur" onblur="validateUmur()">
+            <span id="errorUmur" class="error"></span>
+        </div>
+
+        <input type="submit" value="Kirim">
+    </form>
+
+    <script>
+        // Validasi Nama (Required)
+        function validateNama() {
+            var nama = document.getElementById("nama").value;
+            var errorNama = document.getElementById("errorNama");
+            
+            if (nama.trim() === "") {
+                errorNama.innerText = "Nama harus diisi.";
+                return false;
+            } else {
+                errorNama.innerText = "";
+                return true;
+            }
+        }
+
+        // Validasi Format Email
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var errorEmail = document.getElementById("errorEmail");
+            var pola = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (email !== "" && !email.match(pola)) {
+                errorEmail.innerText = "Format email tidak valid.";
+                return false;
+            } else {
+                errorEmail.innerText = "";
+                return true;
+            }
+        }
+
+        // Validasi Umur (Angka 1 sampai 100)
+        function validateUmur() {
+            var umur = document.getElementById("umur").value;
+            var errorUmur = document.getElementById("errorUmur");
+
+            if (umur === "" || isNaN(umur) || umur < 1 || umur > 100) {
+                errorUmur.innerText = "Umur harus berupa angka antara 1 sampai 100.";
+                return false;
+            } else {
+                errorUmur.innerText = "";
+                return true;
+            }
+        }
+
+        // Validasi Keseluruhan Saat Submit
+        function validateForm() {
+            var cekNama = validateNama();
+            var cekEmail = validateEmail();
+            var cekUmur = validateUmur();
+
+            if (cekNama && cekEmail && cekUmur) {
+                alert("Form berhasil disubmit!");
+                return true;
+            } else {
+                alert("Periksa kembali data yang dimasukkan.");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>

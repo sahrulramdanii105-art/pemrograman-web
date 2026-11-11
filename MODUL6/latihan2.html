@@ -1,0 +1,52 @@
+<form id="myForm" onsubmit="return validateForm()">
+    <label for="nama">Nama (Wajib diisi): </label>
+    <input type="text" id="nama" onblur="validateNama()"><br>
+    <span id="errorNama" style="color:red; font-size:12px;"></span><br><br>
+
+    <label for="email">Email: </label>
+    <input type="email" id="email" onblur="validateEmail()"><br>
+    <span id="errorEmail" style="color:red; font-size:12px;"></span><br><br>
+
+    <label for="umur">Umur (1 - 100): </label>
+    <input type="number" id="umur" onblur="validateUmur()"><br>
+    <span id="errorUmur" style="color:red; font-size:12px;"></span><br><br>
+
+    <input type="submit" value="Kirim">
+</form>
+
+<script>
+    function validateNama() {
+        var nama = document.getElementById("nama").value;
+        if (nama.trim() === "") {
+            document.getElementById("errorNama").innerText = "Nama wajib diisi!";
+            return false;
+        }
+        document.getElementById("errorNama").innerText = "";
+        return true;
+    }
+
+    function validateEmail() {
+        var email = document.getElementById("email").value;
+        var pola = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (email !== "" && !email.match(pola)) {
+            document.getElementById("errorEmail").innerText = "Format email tidak valid!";
+            return false;
+        }
+        document.getElementById("errorEmail").innerText = "";
+        return true;
+    }
+
+    function validateUmur() {
+        var umur = document.getElementById("umur").value;
+        if (umur === "" || isNaN(umur) || umur < 1 || umur > 100) {
+            document.getElementById("errorUmur").innerText = "Umur harus berupa angka antara 1 sampai 100!";
+            return false;
+        }
+        document.getElementById("errorUmur").innerText = "";
+        return true;
+    }
+
+    function validateForm() {
+        return validateNama() && validateEmail() && validateUmur();
+    }
+</script>
